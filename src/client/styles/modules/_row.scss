@@ -1,0 +1,51 @@
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	&__col-2 {
+		flex-basis: 100%;
+		margin-top: 20px;
+		@include atMedium {
+			flex-basis: 48%;
+		}
+	}
+
+
+	&__col-3 {
+		flex-basis: 100%;
+		margin-top: 20px;
+		@include atSmall {
+			flex-basis: 47%;
+			&:last-child {
+				flex-basis: 100%;
+			}
+		}
+		@include atMedium {
+			flex-basis: 31%;
+			&:last-child {
+				flex-basis: 31%;
+			}
+
+		}
+		@include atLarge {
+			flex-basis: 28%;
+		}
+	}
+
+
+	&__col-4 {
+		margin-top: 20px;
+		flex-basis: 100%;
+		@include atSmall {
+			flex-basis: 47%;
+		}
+		@include atMedium {
+			flex-basis: 24%;
+		}
+		@include atLarge {
+			flex-basis: 22%;
+		}
+	}
+}
