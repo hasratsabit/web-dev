@@ -4,7 +4,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	&__col-2 {
+	&__col-6 {
 		flex-basis: 100%;
 		margin-top: 20px;
 		@include atMedium {
@@ -13,7 +13,7 @@
 	}
 
 
-	&__col-3 {
+	&__col-4 {
 		flex-basis: 100%;
 		margin-top: 20px;
 		@include atSmall {
@@ -35,7 +35,7 @@
 	}
 
 
-	&__col-4 {
+	&__col-3 {
 		margin-top: 20px;
 		flex-basis: 100%;
 		@include atSmall {

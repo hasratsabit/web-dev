@@ -20,7 +20,7 @@ gulp.task("cleanPublic", () => {
 	return del("./public");
 });
 
-gulp.task("buildServer", ["cleanServer", "cleanPublic"], buildDevServer)
+gulp.task("buildServer", ["cleanServer", "cleanPublic", "images"], buildDevServer)
 gulp.task("watchServer", ["buildServer"], watchDevServer)
 gulp.task("dev", ["watchServer"], reloadDevServer);
 
