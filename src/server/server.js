@@ -8,6 +8,7 @@ import chalk from "chalk";
 import socketIo from "socket.io";
 import http from "http";
 
+console.log("works");
 
 const app = express();
 const server = new http.Server(app);

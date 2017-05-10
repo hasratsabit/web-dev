@@ -1,0 +1,56 @@
+.section {
+	padding: 50px 0 50px;
+	@include atMedium {
+		padding: 50px 0 100px;
+	}
+
+	&--client-bg {
+		background-image: url("/build/images/banner.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+	}
+
+	&--gray {
+		background-color: whitesmoke;
+	}
+
+	&--blue {
+		background-color: $lightBlue;
+	}
+
+	&__title {
+		font-size: 2rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		text-align: center;
+		&--white {
+			color: #FFF;
+		}
+		&--gray {
+			color: $headerColor;
+		}
+	}
+	&__description {
+		font-size: 1.2rem;
+		padding: 10px 0 50px;
+		font-weight: 100;
+		text-align: center;
+	}
+
+	.white {
+		color: #FFF;
+	}
+
+	.gray {
+		color: $headerColor;
+	}
+
+	&--white-at-large {
+		background-color: $lightGray;
+		@include atMedium {
+			background-color: #FFF;
+		}
+	}
+}

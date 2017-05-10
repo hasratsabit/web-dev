@@ -2,7 +2,6 @@
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 
 	&__col-6 {
 		flex-basis: 100%;
@@ -18,15 +17,9 @@
 		margin-top: 20px;
 		@include atSmall {
 			flex-basis: 47%;
-			&:last-child {
-				flex-basis: 100%;
-			}
 		}
 		@include atMedium {
 			flex-basis: 31%;
-			&:last-child {
-				flex-basis: 31%;
-			}
 
 		}
 		@include atLarge {
@@ -36,8 +29,7 @@
 
 
 	&__col-3 {
-		margin-top: 20px;
-		flex-basis: 100%;
+
 		@include atSmall {
 			flex-basis: 47%;
 		}
@@ -47,5 +39,31 @@
 		@include atLarge {
 			flex-basis: 22%;
 		}
+	}
+}
+
+/* For Equal Height */
+.equal-height > div {
+	display: flex;
+}
+
+.justify-center-space {
+	justify-content: center;
+	@include atMedium {
+		justify-content: space-between;
+	}
+}
+
+.justify-space {
+	justify-content: space-between;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.margin-top-at-large {
+	@include atMedium {
+		margin-top: 20px;
 	}
 }

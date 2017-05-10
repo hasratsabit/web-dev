@@ -11,3 +11,11 @@
 		width: 75%;
 	}
 }
+
+.wrapper--fluid {
+	width: 93%;
+	margin: 0 auto;
+	@include atSmall {
+		width: 100%;
+	}
+}

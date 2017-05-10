@@ -1,3 +1,11 @@
 .header {
 	width: 100%;
+	position: absolute;
+	background-color: #FFF;
+	position: fixed;
+
+	&__logo {
+		float: left;
+		padding: 25px;
+	}
 }

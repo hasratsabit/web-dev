@@ -253,6 +253,8 @@ var _http2 = _interopRequireDefault(_http);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log("works");
+
 var app = (0, _express2.default)();
 var server = new _http2.default.Server(app);
 var io = (0, _socket2.default)(server);

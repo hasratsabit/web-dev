@@ -1,1 +1,23 @@
+.navbar {
+	ul {
+		float: right;
+	}
 
+	li {
+		display: inline;
+	}
+
+	li:hover a {
+		color: $navHoverColor;
+		transition: all 0.4s linear;
+	}
+
+	a {
+		display: inline-block;
+		padding: 25px;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $headerColor;
+	}
+}
