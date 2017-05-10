@@ -4,7 +4,19 @@
 		padding: 50px 0 100px;
 	}
 
-	&--client-bg {
+	&--testimonials-bg {
+
+	}
+
+	&--portfolio-bg {
+		background-image: url("/build/images/laptop2.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+	}
+
+	&--team-bg {
 		background-image: url("/build/images/banner.jpg");
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -25,12 +37,6 @@
 		font-weight: 400;
 		text-transform: uppercase;
 		text-align: center;
-		&--white {
-			color: #FFF;
-		}
-		&--gray {
-			color: $headerColor;
-		}
 	}
 	&__description {
 		font-size: 1.2rem;

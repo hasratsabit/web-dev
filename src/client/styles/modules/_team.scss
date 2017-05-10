@@ -1,50 +1,62 @@
 .team {
+	position: relative;
 	background-color: #FFF;
 	box-shadow: 0 0 1px #ccc;
 	border-left: 3px solid $lightBlue;
-	margin-bottom: 20px;
-	border-radius: 5px;
+	margin-bottom: 10px;
+	overflow: hidden;
 	@include clearfix;
 	@include atMedium {
 		text-align: center;
 		border: none;
-		padding: 20px;
 		margin-bottom: 0;
+		background-color: transparent;
+		box-shadow: none;
 	}
 
-
-	&__image {
-		width: 25%;
-		float: left;
-		padding: 25px;
-		@include atMedium {
-			float: none;
-			width: 50%;
-			padding-left: 60px;
-		}
+	&:hover .team__content {
+		transform: translateY(0);
 	}
 
 	img {
+		width: 20%;
+		height: 80px;
+		margin: 20px 10px 0 20px;
+		float: left;
 		border-radius: 50%;
 		border: 3px solid $lightBlue;
+		@include atMedium {
+			float: none;
+			margin: 0;
+			padding: 0;
+		}
 	}
-
 	h2 {
 		font-size: 0.9rem;
 		text-transform: uppercase;
 		font-weight: 900;
 		padding: 10px 0 0;
 		@include atMedium {
-			font-size: 1.2rem;
+			font-size: 1.5rem;
+			color: #FFF;
 		}
 	}
+
 
 	h3 {
 		font-size: 0.8rem;
 		padding: 0 0 10px;
 		font-weight: 100;
 		@include atMedium {
-			font-size: 1rem;
+			font-size: 1.2rem;
+			color: #FFF;
+		}
+	}
+
+	p {
+		@include atMedium {
+			color: #FFF;
+			padding: 0 20px;
 		}
 	}
 
@@ -54,24 +66,24 @@
 		text-align: center;
 		height: 20px;
 		width: 20px;
-		padding: 4px;
+		padding: 6px;
 		border-radius: 50%;
-		color: #FFF;
 		margin: 10px 5px;
 		background-color: $lightBlue;
-		border: 2px solid;
+		color: #FFF;
+		border: 2px solid $lightBlue;
 		transition: all 300ms linear;
 
 		@include atMedium {
 			height: 25px;
 			width: 25px;
-			padding: 8px;
+			padding: 3px;
 			font-size: 1.5rem;
 		}
 
 		&:hover {
-			background-color: transparent;
 			color: $lightBlue;
+			background-color: transparent;
 		}
 	}
 
