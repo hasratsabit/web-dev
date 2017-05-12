@@ -1,5 +1,6 @@
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Oswald|Source+Sans+Pro');
 @import "./base/global";
 @import "./base/mixins";
 @import "./base/variables";
@@ -7,7 +8,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import "./modules/row";
 @import "./modules/header";
 @import "./modules/navbar";
-@import "./modules/large-hero";
+@import "./modules/hero";
 @import "./modules/headlines";
 @import "./modules/sections";
 @import "./modules/services";
@@ -16,6 +17,9 @@ $fa-font-path: "~font-awesome/fonts";
 @import "./modules/testimonials";
 @import "./modules/team";
 @import "./modules/input";
+@import "./modules/buttons";
+@import "./modules/contact";
+@import "./modules/footer";
 
 
 

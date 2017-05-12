@@ -1,6 +1,7 @@
 
-input,
+.input-control,
 textarea {
+	width: 100%;
   position: relative;
   outline: none;
   border: none;
@@ -8,16 +9,16 @@ textarea {
   padding: 5px 0;
   text-indent: 5px;
   border-radius: none !important;
-  background-color: #f2f2f2;
+	border-bottom: 1px solid $lightGray;
 
 }
 
-input:focus::-webkit-input-placeholder,
-input:active::-webkit-input-placeholder {
+.input-control:focus::-webkit-input-placeholder,
+.input-control:active::-webkit-input-placeholder {
 
-  font-size: 12px;
+  font-size: 0.7rem;
   color: $lightBlue;
-  padding-bottom: 7px;
+  padding-bottom: 10px;
   border-color: $lightBlue;
   transform: translateY(-100%);
   transition: all 300ms ease-in-out;
@@ -25,10 +26,9 @@ input:active::-webkit-input-placeholder {
 }
 
 
-input {
+.input-control {
   position: relative;
   height: 40px;
-  width: 100%;
   &:focus {
     text-indent: 0;
     border-bottom: 1px solid $lightBlue;

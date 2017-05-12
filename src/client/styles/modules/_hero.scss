@@ -1,0 +1,183 @@
+.hero {
+	margin: 0 auto;
+	width: 100%;
+	background-color: $headerColor;
+	@include atMedium{
+		height: 600px;
+	}
+	@include atLarge {
+		height: 750px;
+	}
+
+	&__content {
+		position: absolute;
+		text-align: center;
+		@include atMedium {
+			top: 35%;
+			left: 27%;
+		}
+		@include atLarge {
+			top: 35%;
+			left: 34%;
+		}
+
+		h1 {
+			font-size: 3.5rem;
+			font-weight: 900;
+			font-family: Oswald, sans-serif;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #FFF;
+			padding-bottom: 15px;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 53%;
+				left: 42%;
+				width: 15%;
+				height: 3px;
+				background-color: $lightBlue;
+
+			}
+		}
+		strong {
+			color: $lightBlue;
+		}
+
+		button {
+			margin-top: 20px;
+		}
+	}
+	img {
+		position: absolute;
+	}
+
+	.bin {
+		top: 20%;
+		left: 25%;
+
+		@include atMedium {
+			height: 65px;
+			width: 65px;
+		}
+		@include atLarge {
+			height: 80px;
+			width: 80px;
+		}
+	}
+
+	.coffee {
+		width: 70px;
+		height: 70px;
+		left: 10%;
+
+		@include atMedium {
+			bottom: 30%;
+		}
+		@include atLarge {
+			bottom: 40%;
+		}
+	}
+
+	.glass {
+		@include atMedium {
+			width: 110px;
+			height: 68px;
+			bottom: 30%;
+			right: 15%;
+		}
+
+		@include atLarge {
+			width: 126px;
+			height: 78px;
+			bottom: 40%;
+			right: 20%;
+		}
+	}
+
+	.headphone {
+		@include atMedium {
+			width: 110px;
+			height: 110px;
+			right: 15%;
+			top: 20%;
+		}
+		@include atLarge {
+			width: 130px;
+			height: 130px;
+			right: 20%;
+			top: 20%;
+		}
+	}
+
+	.mice {
+		width: 43px;
+		height: 80px;
+		right: 35%;
+		bottom: 33%;
+	}
+
+	.keyboard {
+		width: 310px;
+		height: 110px;
+
+		@include atMedium {
+			width: 280px;
+			height: 90px;
+			bottom: 20%;
+			left: 39%;
+		}
+		@include atLarge {
+			bottom: 33%;
+			left: 41.5%;
+		}
+	}
+
+	.imac {
+
+		@include atMedium {
+			width: 550px;
+			height: 132px;
+			top: 14%;
+			left: 29%;
+		}
+
+		@include atLarge {
+			width: 611px;
+			height: 192px;
+			top: 10%;
+			left: 33%;
+		}
+	}
+
+	.mackbook {
+		transform: rotate(-40deg);
+		@include atMedium {
+			width: 183px;
+			height: 160px;
+			left: 5%;
+			top: 25%;
+		}
+		@include atLarge {
+			width: 223px;
+			height: 200px;
+			top: 20%;
+			left: 10%;
+		}
+	}
+
+	.note {
+		width: 76px;
+		height: 112px;
+
+		@include atMedium {
+			bottom: 25%;
+			left: 25%;
+		}
+		@include atLarge {
+			bottom: 33%;
+			left: 30%;
+		}
+	}
+
+}

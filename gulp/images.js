@@ -6,6 +6,6 @@ gulp.task("deleteImages", function() {
 })
 
 gulp.task("images", ["deleteImages"], function() {
-	return gulp.src("./src/client/images/**/*{svg,png,jpg,jpeg}")
+	return gulp.src("./src/client/images/**/*{svg,png,jpg,jpeg,tiff}")
 					.pipe(gulp.dest("./public/build/images"))
 })

@@ -4,13 +4,15 @@
 	}
 
 	li {
+		position: relative;
 		display: inline;
 	}
 
 	li:hover a {
-		color: $navHoverColor;
+		color: $lightBlue;
 		transition: all 0.4s linear;
 	}
+
 
 	a {
 		display: inline-block;
