@@ -4,8 +4,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const dirname = path.resolve("./");
 function createClientConfig(isDebug) {
 	const devTool = isDebug ? "eval-source-map" : "source-map";
+
 	const cssLoader = { test: /\.css$/, loader: ["style-loader", "css-loader"]};
 	const sassLoader = { test: /\.scss$/, loader: ["style-loader", "css-loader", "sass-loader", "postcss-loader"]}
+
 	const appEntry = ["./src/client/scripts/main.js"];
 	const plugins = [
 		new webpack.LoaderOptionsPlugin({

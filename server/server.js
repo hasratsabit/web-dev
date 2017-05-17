@@ -112,6 +112,7 @@ var webpack = __webpack_require__(2);
 var ExtractTextPlugin = __webpack_require__(15);
 var dirname = path.resolve("./");
 function createClientConfig(isDebug) {
+	var cssIdentifier = isDebug ? '[path][name]---[local]' : '[hash:base64:10]';
 	var devTool = isDebug ? "eval-source-map" : "source-map";
 	var cssLoader = { test: /\.css$/, loader: ["style-loader", "css-loader"] };
 	var sassLoader = { test: /\.scss$/, loader: ["style-loader", "css-loader", "sass-loader", "postcss-loader"] };

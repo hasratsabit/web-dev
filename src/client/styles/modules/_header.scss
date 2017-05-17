@@ -17,7 +17,7 @@
 		top: 5px;
 		width: 100px;
 		@include atMedium {
-			top: 5px;
+			top: 10px;
 			width: 180px;
 			// For Scrolling
 			transition: all 300ms linear;
