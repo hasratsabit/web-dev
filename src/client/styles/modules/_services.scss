@@ -8,6 +8,7 @@
 		background-color: #eee;
 	}
 	@include atMedium {
+		margin: 20px;
 		border: none;
 		text-align: center;
 		box-shadow: 0 0 5px #ccc;

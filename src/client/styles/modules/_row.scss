@@ -14,16 +14,15 @@
 
 	&__col-4 {
 		width: 100%;
-		margin-top: 20px;
 		@include atSmall {
 			width: 47%;
 		}
 		@include atMedium {
-			width: 31%;
+			width: 33%;
 
 		}
 		@include atLarge {
-			width: 28%;
+			width: 30%;
 		}
 	}
 
@@ -62,8 +61,8 @@
 	justify-content: center;
 }
 
-.margin-top-at-large {
-	@include atMedium {
-		margin-top: 20px;
-	}
-}
+// .margin-top-at-large {
+// 	@include atMedium {
+// 		margin-top: 20px;
+// 	}
+// }
