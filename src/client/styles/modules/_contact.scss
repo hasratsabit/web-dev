@@ -1,20 +1,15 @@
 .contact {
 
 	&__input-group {
-		margin: 20px 0;
-	}
-
-	input {
-		font-size: 1.1rem;
-	}
-
-	textarea {
-		font-size: 1.1rem;
+		margin: 5px 0;
+		@include atMedium {
+			margin: 20px 0;
+		}
 	}
 }
 
 .left-input .input-control {
 	@include atMedium {
-		margin-bottom: 30px;
+		margin-bottom: 37px;
 	}
 }

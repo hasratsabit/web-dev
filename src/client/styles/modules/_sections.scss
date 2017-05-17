@@ -1,7 +1,7 @@
 .section {
 	padding: 50px 0 50px;
 	@include atMedium {
-		padding: 50px 0 100px;
+		padding: 50px 0 80px;
 	}
 
 	&--testimonials-bg {
@@ -16,12 +16,16 @@
 		background-attachment: fixed;
 	}
 
-	&--team-bg {
-		background-image: url("/build/images/banner.jpg");
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-attachment: fixed;
+	// &--team-bg {
+	// 	background-image: url("/build/images/banner.jpg");
+	// 	background-size: cover;
+	// 	background-repeat: no-repeat;
+	// 	background-position: center center;
+	// 	background-attachment: fixed;
+	// }
+
+	&--header-color {
+		background-color: $headerColor;
 	}
 
 	&--gray {
@@ -33,13 +37,17 @@
 	}
 
 	&__title {
-		font-size: 3rem;
-		font-weight: 900;
+		font-size: 1.8rem;
+		padding-bottom: 20px;
 		font-family: Oswald, sans-serif;
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		text-align: center;
-		padding-bottom: 50px;
+		@include atMedium {
+			padding-bottom: 50px;
+			font-size: 3rem;
+			font-weight: 900;
+		}
 
 		strong {
 			color: $lightBlue;

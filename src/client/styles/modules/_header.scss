@@ -1,11 +1,59 @@
 .header {
+	position: relative;
 	width: 100%;
-	position: absolute;
+	height: 60px;
 	background-color: #FFF;
+	box-shadow: 0 0 10px #CCC;
 	position: fixed;
+	z-index: 100;
+	transition: all 300ms linear;
+	@include atMedium {
+		height: 80px;
+	}
 
 	&__logo {
-		float: left;
-		padding: 25px;
+		position: absolute;
+		left: 30px;
+		top: 5px;
+		width: 100px;
+		@include atMedium {
+			top: 5px;
+			width: 180px;
+			// For Scrolling
+			transition: all 300ms linear;
+		}
+		@include atLarge {
+			left: 13.5%;
+		}
+		// Company name for SEO and hidden for display
+		h1 {
+			font-size: 0.1rem;
+			z-index: -1000;
+			opacity: 0;
+			position: absolute;
+		}
+	}
+}
+
+// When scrolled down, header(1) and Logo(2) will be expanded;
+.expanded {
+	@include atMedium {
+		height: 90px;
+		transition: all 300ms linear;
+	}
+	@include atLarge {
+		height: 100px;
+	}
+}
+
+.expand-logo {
+	@include atMedium {
+		top: 8px;
+		transform: scale(1.1);
+		transition: all 300ms linear;
+	}
+	@include atLarge {
+		transform: scale(1.2);
+		top: 15px;
 	}
 }

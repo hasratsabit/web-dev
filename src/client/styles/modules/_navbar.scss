@@ -1,25 +1,87 @@
 .navbar {
-	ul {
-		float: right;
-	}
+		position: absolute;
+		background-color: #FFF;
+		right: 0;
+		// For Mobile Only
+		top: 58px;
+		width: 100%;
+		visibility: collapse;
+		opacity: 0;
+		transform: scale(1.2);
+		transition: all 300ms linear;
+		&--is-visible {
+			visibility: visible;
+			opacity: 1;
+			transform: scale(1);
+		}
+		@include atMedium {
+			top: 7px;
+			right: 20px;
+			width: auto;
+			visibility: visible;
+			opacity: 1;
+			transform: scale(1);
+		}
+		@include atLarge {
+			right: 11%;
+		}
 
 	li {
+		border-bottom: 1px solid $borderColor;
+		transition: all 300ms linear;
 		position: relative;
-		display: inline;
+		&:first-child {
+			border-top: 1px solid $borderColor;
+			@include atMedium {
+				border: none;
+			}
+		}
+		@include atMedium {
+			display: inline;
+			border: none;
+		}
+	}
+
+	li:hover {
+		background-color: $lightBlue;
+		@include atMedium {
+			background-color: #FFF;
+		}
 	}
 
 	li:hover a {
+		color: #FFF;
+		margin-left: 10px;
+		transition: all 300ms linear;
+		@include atMedium {
+			margin-left: 0;
+			color: $lightBlue;
+		}
+	}
+
+	li.active a {
 		color: $lightBlue;
-		transition: all 0.4s linear;
 	}
 
 
 	a {
-		display: inline-block;
-		padding: 25px;
-		font-size: 0.9rem;
-		text-transform: uppercase;
+		display: block;
+		padding: 15px;
+		font-size: 0.7rem;
 		font-weight: 700;
+		text-transform: uppercase;
 		color: $headerColor;
+		@include atMedium {
+			display: inline-block;
+			padding: 25px;
+			font-size: 0.9rem;
+		}
+	}
+}
+
+.expand-navbar {
+	@include atMedium {
+		top: 20px;
+		transition: all 300ms linear;
 	}
 }

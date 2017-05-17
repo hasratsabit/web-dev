@@ -1,44 +1,49 @@
-<header class="header">
+<header class="header" id="header">
 	<div class="header__logo">
-		<a href="#">Logo</a>
+		<h1>Zela Software Solution</h1>
+		<a href="#home"><img src="/build/images/zela-logo.png" alt=""></a>
 	</div>
-	<nav class="navbar">
+	<div class="menu-icon" id="menu-icon">
+		<span class="top"></span>
+		<span class="middle"></span>
+		<span class="bottom"></span>
+	</div>
+	<nav class="navbar" id="navbar">
 		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">Portfolio</a></li>
-			<li><a href="#">Testimonials</a></li>
-			<li><a href="#">Clients</a></li>
-			<li><a href="#">Technologies</a></li>
-			<li><a href="#">Contact</a></li>
+			<li class="active"><a href="#home">Home</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#portfolio">Portfolio</a></li>
+			<li><a href="#testimonials">Testimonials</a></li>
+			<li><a href="#training">Training</a></li>
+			<li><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
 </header>
-<div class="hero">
-	<img src="/build/images/header/imac.png" class="imac" alt="">
-	<img src="/build/images/header/bin.png" class="bin" alt="">
-	<img src="/build/images/header/coffee1.png" class="coffee" alt="">
-	<img src="/build/images/header/glass.png" class="glass" alt="">
-	<img src="/build/images/header/keyboard.png" class="keyboard" alt="">
-	<img src="/build/images/header/note.png" class="note" alt="">
-	<img src="/build/images/header/headphone.png" class="headphone" alt="">
-	<img src="/build/images/header/mackbook.png" class="mackbook" alt="">
-	<img src="/build/images/header/mice.png" class="mice" alt="">
+<div class="hero" id="home">
+	<img src="/build/images/header/imac.png" class="imac animate-hero" alt="">
+	<img src="/build/images/header/bin.png" class="bin animate-hero" alt="">
+	<img src="/build/images/header/coffee1.png" class="coffee animate-hero" alt="">
+	<img src="/build/images/header/glass.png" class="glass animate-hero" alt="">
+	<img src="/build/images/header/keyboard.png" class="keyboard animate-hero" alt="">
+	<img src="/build/images/header/note.png" class="note animate-hero" alt="">
+	<img src="/build/images/header/headphone.png" class="headphone animate-hero" alt="">
+	<img src="/build/images/header/mackbook.png" class="mackbook animate-hero" alt="">
+	<img src="/build/images/header/mice.png" class="mice animate-hero" alt="">
 	<div class="hero__content">
 		<h1><strong>We Bring</strong> You Creativity</h1>
-		<button type="button" name="button" class="btn btn--blue btn--medium btn--round">View Portfolio</button>
+		<li><a href="#portfolio" class="btn btn--blue btn--medium btn--round" id="portfolio-btn">View Portfolio</a></li>
 	</div>
 </div>
 
 
 
 <!-- SERVICES -->
-<section class="section section--gray">
+<section class="section section--gray" id="services">
 	<h1 class="section__title">Advanced Mobile & Web <strong>Applications</strong></h1>
 	<div class="wrapper generic-content">
 		<div class="row equal-height justify-center-space margin-top-at-large">
 			<div class="row__col-3">
-				<div class="services">
+				<div class="services fade-in">
 					<a href="#"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
 					<div class="services__content">
 						<h2>E-Commerce</h2>
@@ -47,7 +52,7 @@
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="services">
+				<div class="services fade-in">
 					<a href="#"><i class="fa fa-database fa-3x" aria-hidden="true"></i></a>
 					<div class="services__content">
 						<h2>Database</h2>
@@ -56,44 +61,44 @@
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="services">
+				<div class="services fade-in">
 					<a href="#"><i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i></a>
 					<h2>UI/UX</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="services">
-					<a href="#"><i class="fa fa-mobile fa-4x" aria-hidden="true"></i></a>
-					<h2>Mobile App</h2>
+				<div class="services fade-in">
+					<a href="#"><i class="fa fa-bar-chart fa-3x" aria-hidden="true"></i></a>
+					<h2>Content Management</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 				</div>
 			</div>
 		</div>
 		<div class="row equal-height justify-center-space margin-top-at-large">
 			<div class="row__col-3">
-				<div class="services">
+				<div class="services fade-in">
 					<a href="#"><i class="fa fa-tasks fa-3x" aria-hidden="true"></i></a>
 					<h2>Optimization</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="services">
-					<a href="#"><i class="fa fa-bar-chart fa-3x" aria-hidden="true"></i></a>
-					<h2>Preformance</h2>
+				<div class="services fade-in">
+					<a href="#"><i class="fa fa-wordpress fa-3x" aria-hidden="true"></i></a>
+					<h2>WordPress</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="services">
+				<div class="services fade-in">
 					<a href="#"><i class="fa fa-picture-o fa-3x" aria-hidden="true"></i></a>
 					<h2>Graphic Design</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="services">
+				<div class="services fade-in">
 					<a href="#"><i class="fa fa-binoculars fa-3x" aria-hidden="true"></i></a>
 					<h2>SEO</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
@@ -106,12 +111,12 @@
 
 
 <!-- PORTFOLIO -->
-<section class="section section--portfolio-bg">
+<section class="section section--portfolio-bg" id="portfolio">
 	<h1 class="section__title white">Look At Our Latest <strong>Works</strong></h1>
 	<div class="wrapper--fluid generic-content">
 		<div class="row justify-center">
 			<div class="row__col-3">
-				<div class="portfolio">
+				<div class="portfolio flip-in">
 					<div class="portfolio__image">
 						<img src="build/images/portfolio/03.jpg" alt="">
 					</div>
@@ -129,7 +134,7 @@
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="portfolio">
+				<div class="portfolio flip-in">
 					<div class="portfolio__image">
 						<img src="build/images/portfolio/06.jpg" alt="">
 					</div>
@@ -147,7 +152,7 @@
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="portfolio">
+				<div class="portfolio flip-in">
 					<div class="portfolio__image">
 						<img src="build/images/portfolio/07.jpg" alt="">
 					</div>
@@ -165,7 +170,7 @@
 				</div>
 			</div>
 			<div class="row__col-3">
-				<div class="portfolio">
+				<div class="portfolio flip-in">
 					<div class="portfolio__image">
 						<img src="build/images/portfolio/08.jpg" alt="">
 					</div>
@@ -189,12 +194,12 @@
 
 
 <!-- TESTIMONIALS -->
-<section class="section section--testimonials-bg section--gray">
+<section class="section section--testimonials-bg section--gray" id="testimonials">
 	<h1 class="section__title"><strong>Our</strong> Happy Clients</h1>
 	<div class="wrapper generic-content">
 		<div class="row justify-space">
 			<div class="row__col-4">
-				<div class="testimonials">
+				<div class="testimonials expand">
 					<div class="testimonials__image">
 						<img src="build/images/team/team-1.jpg" alt="">
 					</div>
@@ -205,7 +210,7 @@
 				</div>
 			</div>
 			<div class="row__col-4">
-				<div class="testimonials">
+				<div class="testimonials expand">
 					<div class="testimonials__image">
 						<img src="build/images/team/team-1.jpg" alt="">
 					</div>
@@ -216,7 +221,7 @@
 				</div>
 			</div>
 			<div class="row__col-4">
-				<div class="testimonials">
+				<div class="testimonials expand">
 					<div class="testimonials__image">
 						<img src="build/images/team/team-1.jpg" alt="">
 					</div>
@@ -244,9 +249,22 @@
 </section> -->
 
 
-
+<section class="section section--header-color clearfix " id="training">
+	<div class="wrapper">
+		<div class="training">
+			<div class="training__content generic-content shrink">
+				<h1>We Give Back To The Community By Offering Free <strong>Web Development Courses</strong></h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<a href="https://www.youtube.com/channel/UCEzbuVkoykjK1KPV2n0SWEA/videos" class="btn btn--blue btn--medium btn--round">Watch Free Courses<i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
+			</div>
+			<div class="training__code shrink">
+				<img src="build/images/code.png" class="" alt="">
+			</div>
+		</div>
+	</div>
+</section>
 <!-- TEAM -->
-<section class="section section--team-bg">
+<!-- <section class="section section--team-bg">
 	<div class="team-bg-color-wrapper">
 		<h1 class="section__title white">Our Dedicated <strong>Team</strong></h1>
 
@@ -309,33 +327,32 @@
 			</div>
 		</div>
 	</div>
-</section>
-
+</section> -->
 
 <!-- CONTACT -->
-<section class="section section--contact-bg">
+<section class="section section--contact-at-large" id="contact">
 	<h1 class="section__title"><strong>Tell Us</strong> How We Can Help</h1>
 	<div class="wrapper">
 		<div class="row justify-space">
 				<div class="row__col-6">
 					<div class="contact left-input">
-						<div class="contact__input-group">
+						<div class="contact__input-group drop">
 							<input type="text" name="" value="" class="input-control" placeholder="Name">
 						</div>
-						<div class="contact__input-group">
+						<div class="contact__input-group drop">
 							<input type="text" name="" value="" class="input-control"  placeholder="Email">
 						</div>
-						<div class="contact__input-group">
+						<div class="contact__input-group drop">
 							<input type="text" name="" value="" class="input-control"  placeholder="Phone">
 						</div>
 					</div>
 				</div>
 				<div class="row__col-6">
 					<div class="contact right-input">
-						<div class="contact__input-group">
+						<div class="contact__input-group drop">
 							<textarea name="name" rows="8" cols="80" placeholder="Say Something..."></textarea>
 						</div>
-						<div class="contact__input-group">
+						<div class="contact__input-group drop">
 							<button type="submit" name="button" class="btn btn--large btn--blue">Send Message</button>
 						</div>
 					</div>

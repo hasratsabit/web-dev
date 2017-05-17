@@ -4,26 +4,26 @@
 	flex-wrap: wrap;
 
 	&__col-6 {
-		flex-basis: 100%;
+		width: 100%;
 		margin-top: 20px;
 		@include atMedium {
-			flex-basis: 48%;
+			width: 48%;
 		}
 	}
 
 
 	&__col-4 {
-		flex-basis: 100%;
+		width: 100%;
 		margin-top: 20px;
 		@include atSmall {
-			flex-basis: 47%;
+			width: 47%;
 		}
 		@include atMedium {
-			flex-basis: 31%;
+			width: 31%;
 
 		}
 		@include atLarge {
-			flex-basis: 28%;
+			width: 28%;
 		}
 	}
 
@@ -31,13 +31,13 @@
 	&__col-3 {
 
 		@include atSmall {
-			flex-basis: 47%;
+			width: 47%;
 		}
 		@include atMedium {
-			flex-basis: 24%;
+			width: 24%;
 		}
 		@include atLarge {
-			flex-basis: 22%;
+			width: 22%;
 		}
 	}
 }

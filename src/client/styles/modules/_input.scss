@@ -10,6 +10,9 @@ textarea {
   text-indent: 5px;
   border-radius: none !important;
 	border-bottom: 1px solid $lightGray;
+	@include atMedium {
+		font-size: 1rem;
+	}
 
 }
 
@@ -18,17 +21,20 @@ textarea {
 
   font-size: 0.7rem;
   color: $lightBlue;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   border-color: $lightBlue;
   transform: translateY(-100%);
   transition: all 300ms ease-in-out;
+	@include atMedium {
+		padding-bottom: 5px;
+	}
 
 }
 
 
 .input-control {
   position: relative;
-  height: 40px;
+  height: 30px;
   &:focus {
     text-indent: 0;
     border-bottom: 1px solid $lightBlue;

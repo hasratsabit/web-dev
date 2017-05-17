@@ -1,0 +1,54 @@
+.fade-in {
+	transform: translateX(20px) scale(1.2);
+	opacity: 0;
+	transition: all 300ms linear;
+
+	&--is-active {
+		transform: translateX(0px) scale(1);
+		opacity: 1;
+	}
+}
+
+.flip-in {
+	transform: rotateY(90deg);
+	opacity: 0;
+	transition: all 500ms linear;
+
+	&--is-active {
+		transform: rotate(0);
+		opacity: 1;
+	}
+}
+
+.expand {
+	transform: scale(0);
+	opacity: 0;
+	transition: all 500ms linear;
+
+	&--is-active {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.shrink {
+	transform: scale(1.3);
+	opacity: 0;
+	transition: all 500ms linear;
+
+	&--is-active {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.drop {
+	transform: translateY(-20%);
+	opacity: 0;
+	transition: all 500ms linear;
+
+	&--is-active {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
