@@ -1,8 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
-	res.render("index", { title: "Welcome to web development"})
-})
+const TestifyRoute = require("./testimonials");
+const ServiceRoute = require("./services");
+
+
+router.get("/", (req, res) => {
+	res.render("index", {title: "ZELA"});
+});
+
+router.use("/services", ServiceRoute);
+router.use("/testimonials", TestifyRoute);
 
 module.exports = router;

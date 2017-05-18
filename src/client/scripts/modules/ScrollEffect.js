@@ -21,7 +21,6 @@ menuItems.click(function(e){
   $('html, body').stop().animate({
       scrollTop: offsetTop
   }, 300);
-  e.preventDefault();
 });
 
 // Bind to scroll

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -76,29 +76,19 @@ module.exports = require("express");
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = require("path");
+module.exports = require("mongoose");
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("webpack");
+module.exports = require("path");
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-var express = __webpack_require__(0);
-var router = express.Router();
-
-router.get("/", function (req, res, next) {
-	res.render("index", { title: "Welcome to web development" });
-});
-
-module.exports = router;
+module.exports = require("webpack");
 
 /***/ }),
 /* 4 */
@@ -107,14 +97,36 @@ module.exports = router;
 "use strict";
 
 
-var path = __webpack_require__(1);
-var webpack = __webpack_require__(2);
-var ExtractTextPlugin = __webpack_require__(15);
+var express = __webpack_require__(0);
+var router = express.Router();
+
+var TestifyRoute = __webpack_require__(16);
+var ServiceRoute = __webpack_require__(15);
+
+router.get("/", function (req, res) {
+	res.render("index", { title: "ZELA" });
+});
+
+router.use("/services", ServiceRoute);
+router.use("/testimonials", TestifyRoute);
+
+module.exports = router;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var path = __webpack_require__(2);
+var webpack = __webpack_require__(3);
+var ExtractTextPlugin = __webpack_require__(19);
 var dirname = path.resolve("./");
 function createClientConfig(isDebug) {
-	var cssIdentifier = isDebug ? '[path][name]---[local]' : '[hash:base64:10]';
 	var devTool = isDebug ? "eval-source-map" : "source-map";
-	var cssLoader = { test: /\.css$/, loader: ["style-loader", "css-loader"] };
+	var cssIdentifier = isDebug ? '[path][name]---[local]' : '[hash:base64:10]';
+	var cssLoader = { test: /\.css$/, loader: ["style-loader", "css-loader?localIdentName=" + cssIdentifier] };
 	var sassLoader = { test: /\.scss$/, loader: ["style-loader", "css-loader", "sass-loader", "postcss-loader"] };
 	var appEntry = ["./src/client/scripts/main.js"];
 	var plugins = [new webpack.LoaderOptionsPlugin({
@@ -122,7 +134,7 @@ function createClientConfig(isDebug) {
 			postcss: function postcss() {
 				return [
 				// require("postcss-mixins"),
-				__webpack_require__(14)
+				__webpack_require__(18)
 				// require("postcss-simple-vars"),
 				// require("postcss-nested")
 				];
@@ -132,9 +144,9 @@ function createClientConfig(isDebug) {
 
 	if (!isDebug) {
 		plugins.push(new webpack.optimize.UglifyJsPlugin());
-		plugins.push(new ExtractTextPlugin("[name].css"));
+		plugins.push(new ExtractTextPlugin("[name]-[contenthash:10].css"));
 
-		cssLoader.loader = ExtractTextPlugin.extract({ fallback: "style-loader", use: ["css-loader"] });
+		cssLoader.loader = ExtractTextPlugin.extract({ fallback: "style-loader", use: ["css-loader?minimize&localIdentName=" + cssIdentifier] });
 		sassLoader.loader = ExtractTextPlugin.extract({ fallback: "style-loader", use: ["css-loader", "sass-loader"] });
 	} else {
 		plugins.push(new webpack.HotModuleReplacementPlugin());
@@ -149,7 +161,7 @@ function createClientConfig(isDebug) {
 		output: {
 			path: path.join(dirname, "public", "build"),
 			publicPath: "/build/",
-			filename: "bundle.js"
+			filename: isDebug ? "bundle.js" : "bundle.[hash:12].min.js"
 		},
 		module: {
 			loaders: [{ test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ }, { test: /\.(png|jpg|jpeg|gif|woff|ttf|eot|svg|woff2)/, loader: "url-loader?limit=1024" }, cssLoader, sassLoader]
@@ -162,34 +174,28 @@ module.exports = createClientConfig(true);
 module.exports.create = createClientConfig;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = require("body-parser");
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = require("chalk");
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 module.exports = require("express-handlebars");
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-module.exports = require("http");
-
-/***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = require("mongoose");
+module.exports = require("http");
 
 /***/ }),
 /* 10 */
@@ -216,56 +222,133 @@ module.exports = require("webpack-hot-middleware");
 "use strict";
 
 
-var _express = __webpack_require__(0);
+var mongoose = __webpack_require__(1);
+var Schema = mongoose.Schema;
 
-var _express2 = _interopRequireDefault(_express);
+var ServiceSchema = new Schema({
+	icon: { type: String, required: true },
+	title: { type: String, required: true },
+	content: { type: String, required: true }
+});
 
-var _path = __webpack_require__(1);
+module.exports = mongoose.model("Service", ServiceSchema);
 
-var _path2 = _interopRequireDefault(_path);
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var _mongoose = __webpack_require__(9);
+"use strict";
 
-var _mongoose2 = _interopRequireDefault(_mongoose);
 
-var _bodyParser = __webpack_require__(5);
+var mongoose = __webpack_require__(1);
+var Schema = mongoose.Schema;
 
-var _bodyParser2 = _interopRequireDefault(_bodyParser);
+var TestimonialsSchema = new Schema({
+	imagePath: { type: String, required: true },
+	name: { type: String, required: true },
+	comment: { type: String, required: true }
+});
 
-var _expressHandlebars = __webpack_require__(7);
+module.exports = mongoose.model("testimonial", TestimonialsSchema);
 
-var _expressHandlebars2 = _interopRequireDefault(_expressHandlebars);
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var _index = __webpack_require__(3);
+"use strict";
 
-var _index2 = _interopRequireDefault(_index);
 
-var _chalk = __webpack_require__(6);
+var mongoose = __webpack_require__(1);
+var express = __webpack_require__(0);
+var router = express.Router();
+var Services = __webpack_require__(13);
 
-var _chalk2 = _interopRequireDefault(_chalk);
+router.get("/", function (req, res, next) {
+	Services.find(function (err, ServiceData) {
+		if (err) {
+			throw err;
+		} else {
+			res.send(ServiceData);
+		}
+	});
+});
 
-var _socket = __webpack_require__(10);
+router.post("/", function (req, res) {
+	var Service = new Services();
+	Service.icon = req.body.icon, Service.title = req.body.title, Service.content = req.body.content;
+	Service.save(function (err, ServiceData) {
+		if (err) {
+			throw err;
+		} else {
+			res.json(ServiceData);
+		}
+	});
+});
 
-var _socket2 = _interopRequireDefault(_socket);
+module.exports = router;
 
-var _http = __webpack_require__(8);
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var _http2 = _interopRequireDefault(_http);
+"use strict";
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log("works");
+var express = __webpack_require__(0);
+var UserTestify = __webpack_require__(14);
+var router = express.Router();
 
-var app = (0, _express2.default)();
-var server = new _http2.default.Server(app);
-var io = (0, _socket2.default)(server);
+router.get("/", function (req, res) {
+	Testify.find(function (err, data) {
+		res.render("index", { data: data });
+	});
+});
+
+router.post("/", function (req, res) {
+	var Testify = new UserTestify();
+	Testify.imagePath = req.body.imagePath, Testify.name = req.body.name, Testify.comment = req.body.comment;
+	Testify.save(function (err, data) {
+		if (err) {
+			throw err;
+		} else {
+			res.json(data);
+		}
+	});
+});
+
+module.exports = router;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var express = __webpack_require__(0);
+var path = __webpack_require__(2);
+var mongoose = __webpack_require__(1);
+var bodyParser = __webpack_require__(6);
+var exphbs = __webpack_require__(8);
+var index = __webpack_require__(4);
+var chalk = __webpack_require__(7);
+var socketIo = __webpack_require__(10);
+var http = __webpack_require__(9);
+
+var app = express();
+var server = new http.Server(app);
+var io = socketIo(server);
+
+// Database
+mongoose.connect("mongodb://hasratsabit:1234@ds143141.mlab.com:43141/zela");
+mongoose.Promise = global.Promise;
 
 // Client Webpack
 if (process.env.USE_WEBPACK === "true") {
 	var webpackMiddleware = __webpack_require__(11),
 	    webpackHotMiddlware = __webpack_require__(12),
-	    webpack = __webpack_require__(2),
-	    clientConfig = __webpack_require__(4).create(true);
+	    webpack = __webpack_require__(3),
+	    clientConfig = __webpack_require__(5).create(true);
 
 	var compiler = webpack(clientConfig);
 	app.use(webpackMiddleware(compiler, {
@@ -281,16 +364,16 @@ if (process.env.USE_WEBPACK === "true") {
 		}
 	}));
 	app.use(webpackHotMiddlware(compiler));
-	console.log(_chalk2.default.bgRed("Using WebPack Dev Middleware! THIS IS FOR DEV ONLY!"));
+	console.log(chalk.bgRed("Using WebPack Dev Middleware! THIS IS FOR DEV ONLY!"));
 }
 
-app.engine(".hbs", (0, _expressHandlebars2.default)({ defaultLayout: "layout", extname: ".hbs" }));
+app.engine(".hbs", exphbs({ defaultLayout: "layout", extname: ".hbs" }));
 app.set("view engine", "hbs");
-app.use(_express2.default.static(_path2.default.join("public")));
-app.use(_bodyParser2.default.json());
-app.use(_bodyParser2.default.urlencoded({ extended: false }));
+app.use(express.static(path.join("public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/", _index2.default);
+app.use("/", index);
 
 app.use(function (req, res, next) {
 	var err = new Error("Not Found");
@@ -307,13 +390,13 @@ function startServer() {
 startServer();
 
 /***/ }),
-/* 14 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("autoprefixer");
 
 /***/ }),
-/* 15 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("extract-text-webpack-plugin");

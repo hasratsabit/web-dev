@@ -1,18 +1,21 @@
-import express from "express";
-import path from "path";
-import mongoose from "mongoose";
-import bodyParser from "body-parser";
-import exphbs from "express-handlebars";
-import index from "./routes/index";
-import chalk from "chalk";
-import socketIo from "socket.io";
-import http from "http";
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const exphbs = require("express-handlebars");
+const index = require("./routes/index");
+const chalk = require("chalk");
+const socketIo = require("socket.io");
+const http = require("http");
 
-console.log("works");
 
 const app = express();
 const server = new http.Server(app);
 const io = socketIo(server);
+
+// Database
+mongoose.connect("mongodb://hasratsabit:1234@ds143141.mlab.com:43141/zela");
+mongoose.Promise = global.Promise;
 
 // Client Webpack
 if (process.env.USE_WEBPACK === "true") {
@@ -47,6 +50,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 
 app.use("/", index);
+
 
 app.use((req, res, next) => {
 	const err = new Error("Not Found")

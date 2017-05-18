@@ -1,0 +1,44 @@
+
+<!-- TESTIMONIALS -->
+<section class="section section--testimonials-bg section--gray" id="testimonials">
+	<h1 class="section__title"><strong>Our</strong> Happy Clients</h1>
+	<div class="wrapper generic-content">
+		<div class="row justify-space">
+			{{# each data}}
+			<div class="row__col-4">
+				<div class="testimonials expand">
+					<div class="testimonials__image">
+						<img src="{{this.imagePath}}" alt="">
+					</div>
+					<div class="testimonials__content">
+						<h2>{{this.name}}</h2>
+						<p><q cite="">{{this.comment}}</q></p>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+			<!-- <div class="row__col-4">
+				<div class="testimonials expand">
+					<div class="testimonials__image">
+						<img src="build/images/team/team-2.jpg" alt="">
+					</div>
+					<div class="testimonials__content">
+						<h2>John Doe</h2>
+						<p><q cite="">Lorem ipsum dolor sit amet, consectetur adipisicing elit,  Ut enim ad minim veniam</q></p>
+					</div>
+				</div>
+			</div>
+			<div class="row__col-4">
+				<div class="testimonials expand">
+					<div class="testimonials__image">
+						<img src="build/images/team/team-3.jpg" alt="">
+					</div>
+					<div class="testimonials__content">
+						<h2>John Doe</h2>
+						<p><q cite="">Lorem ipsum dolor sit amet, consectetur adipisicing elit,  Ut enim ad minim veniam</q></p>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</section>

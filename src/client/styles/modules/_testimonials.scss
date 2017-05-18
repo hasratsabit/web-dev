@@ -1,4 +1,5 @@
 .testimonials {
+	height: 150px;
 	position: relative;
 	background-color: #FFF;
 	border-radius: 5px;
@@ -6,6 +7,7 @@
 	margin-top: 10px;
 	@include clearfix;
 	@include atMedium {
+		height: 180px;
 		text-align: center;
 		padding: 20px;
 	}
@@ -22,12 +24,18 @@
 		}
 	}
 	h2 {
+		position: absolute;
+		top: 90px;
+		left: 25px;
 		font-weight: 900;
 		text-transform: uppercase;
 		color: $headerColor;
 		font-size: 1rem;
 		margin: 20px 0 5px;
 		@include atMedium {
+			position: relative;
+			top: 0;
+			left: 0;
 			margin: 10px 0;
 			font-size: 1.2rem;
 			font-weight: 900;
@@ -37,6 +45,7 @@
 	p {
 		font-style: italic;
 		line-height: 20px;
+		padding: 10px 10px 0 120px;
 		@include atMedium {
 			font-size: 1rem;
 			font-weight: 100;

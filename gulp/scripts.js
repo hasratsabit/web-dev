@@ -62,7 +62,7 @@ function watchDevServer() {
 // nodemon setup
 function reloadDevServer() {
 	return $.nodemon({
-		script: "./server/server.js",
+		script: "./src/server/server.js",
 		watch: "./server",
 		env: {
 			"NODE_ENV": "development",
